@@ -1,0 +1,43 @@
+[Unit]
+Description=Mining Mayhem Robot Competition Stack
+After=docker.service network.target
+Requires=docker.service
+
+[Service]
+Type=simple
+User=mrohms
+Environment=HOME=/home/mrohms
+
+# Create log directory
+ExecStartPre=/bin/mkdir -p /home/mrohms/logs
+
+# Wait for Docker to be ready
+ExecStartPre=/bin/bash -c 'for i in $(seq 1 10); do docker info > /dev/null 2>&1 && break || sleep 2; done'
+
+# Stop any existing container
+ExecStartPre=-/usr/bin/docker stop mining_mayhem_runtime
+
+# Verify image exists — update this tag if needed
+# Run: docker images | grep isaac_ros_dev to find correct tag
+ExecStart=/usr/bin/docker run \
+    --rm \
+    --name mining_mayhem_runtime \
+    --privileged \
+    --network=host \
+    -v /home/mrohms/workspaces/isaac_ros-dev:/workspaces/isaac_ros-dev \
+    -v /dev:/dev \
+    -v /home/mrohms/logs:/home/mrohms/logs \
+    -e ROS_DOMAIN_ID=42 \
+    -e HOME=/root \
+    isaac_ros_dev-aarch64 \
+    /bin/bash /workspaces/isaac_ros-dev/mining_mayhem_ws/src/mining_mayhem/mining_mayhem/competition_start.sh
+
+ExecStop=/usr/bin/docker stop mining_mayhem_runtime
+
+Restart=on-failure
+RestartSec=5
+StartLimitIntervalSec=60
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

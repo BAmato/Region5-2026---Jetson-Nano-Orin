@@ -1,0 +1,30 @@
+running egg_info
+writing ../../build/mining_mayhem/mining_mayhem.egg-info/PKG-INFO
+writing dependency_links to ../../build/mining_mayhem/mining_mayhem.egg-info/dependency_links.txt
+writing entry points to ../../build/mining_mayhem/mining_mayhem.egg-info/entry_points.txt
+writing requirements to ../../build/mining_mayhem/mining_mayhem.egg-info/requires.txt
+writing top-level names to ../../build/mining_mayhem/mining_mayhem.egg-info/top_level.txt
+reading manifest file '../../build/mining_mayhem/mining_mayhem.egg-info/SOURCES.txt'
+writing manifest file '../../build/mining_mayhem/mining_mayhem.egg-info/SOURCES.txt'
+running build
+running build_py
+copying mining_mayhem/apriltag_to_odom_node.py -> /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/build/lib/mining_mayhem
+running install
+running install_lib
+copying /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/build/lib/mining_mayhem/apriltag_to_odom_node.py -> /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages/mining_mayhem
+byte-compiling /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages/mining_mayhem/apriltag_to_odom_node.py to apriltag_to_odom_node.cpython-310.pyc
+running install_data
+copying config/apriltag_config.yaml -> /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/share/mining_mayhem/config
+running install_egg_info
+removing '/workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages/mining_mayhem-0.1.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/mining_mayhem/mining_mayhem.egg-info to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages/mining_mayhem-0.1.0-py3.10.egg-info
+running install_scripts
+Installing apriltag_to_odom_node script to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/mining_mayhem
+Installing match_watchdog_node script to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/mining_mayhem
+Installing material_detector_node script to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/mining_mayhem
+Installing mission_state_node script to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/mining_mayhem
+Installing path_planner_node script to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/mining_mayhem
+Installing serial_bridge_node script to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/mining_mayhem
+Installing start_led_detector_node script to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/mining_mayhem
+Installing telemetry_decoder_node script to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/mining_mayhem
+writing list of installed files to '/workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/install.log'

@@ -1,0 +1,196 @@
+# ===========================================================================
+# ekf.yaml
+# robot_localization Extended Kalman Filter configuration for the
+# Mining Mayhem competition robot.
+#
+# Fuses three sensor sources:
+#   1. /odom/wheel   – wheel odometry from roboRIO (x, y, yaw)
+#   2. /imu/data     – MPU-6050 gyro yaw rate + linear accel (from roboRIO)
+#   3. /apriltag/pose_correction – AprilTag absolute pose fixes
+#
+# Coordinate frames (REP-105):
+#   world_frame:    "map"        – fixed field frame, origin at field corner
+#   odom_frame:     "odom"       – continuous odometry frame
+#   base_link_frame:"base_link"  – robot center
+#
+# Field dimensions: ~96" x 48" = ~2.44m x 1.22m
+# Robot operation range: very small field, so process noise is tuned tight.
+#
+# Reference: https://github.com/cra-ros-pkg/robot_localization
+# ===========================================================================
+
+# -------------------------------------------------------------------------
+# Filter configuration
+# -------------------------------------------------------------------------
+ekf_filter_node:
+  ros__parameters:
+    # How often the filter produces an estimate (Hz).
+    # 50 Hz matches the roboRIO periodic loop and serial bridge rate.
+    frequency: 50.0
+
+    # Coordinate frame names
+    # "map" is the global/field frame.  "odom" is the continuous dead-reckoning
+    # frame.  The filter publishes the odom→base_link transform.
+    # A second instance or the AprilTag source handles map→odom corrections.
+    world_frame: "odom"
+    odom_frame: "odom"
+    base_link_frame: "base_link"
+
+    # The filter should publish the odom→base_link TF
+    publish_tf: true
+
+    # Use 2D mode: the robot moves on a flat field surface.
+    # This constrains the filter to x, y, yaw and their derivatives,
+    # zeroing z, roll, pitch.  Greatly improves stability.
+    two_d_mode: true
+
+    # Print detailed diagnostics (disable in competition)
+    print_diagnostics: false
+
+    # How long to wait for a transform before marking sensor data stale
+    transform_time_offset: 0.0
+    transform_timeout: 0.05
+
+    # -----------------------------------------------------------------------
+    # Sensor 0: Wheel Odometry (/odom/wheel)
+    # Source: roboRIO → serial bridge → this topic
+    # Provides: x position, y position, yaw, vx, vy, vyaw
+    #
+    # odomN_config matrix:  [x, y, z, roll, pitch, yaw,
+    #                        vx, vy, vz, vroll, vpitch, vyaw,
+    #                        ax, ay, az]
+    # true = fuse this variable, false = ignore
+    # -----------------------------------------------------------------------
+    odom0: "/odom/wheel"
+    odom0_config: [true,  true,  false,   # x, y, z
+                   false, false, true,    # roll, pitch, yaw
+                   true,  true,  false,   # vx, vy, vz
+                   false, false, true,    # vroll, vpitch, vyaw
+                   false, false, false]   # ax, ay, az
+
+    # The odometry is already in the odom frame (serial bridge sets this)
+    odom0_queue_size: 5
+    odom0_differential: false
+    odom0_relative: false
+
+    # Reject odometry readings with large jumps (e.g., encoder glitch)
+    # Mahalanobis distance threshold – 3.0 sigma is a reasonable default
+    odom0_rejection_threshold: 3.0
+
+    # -----------------------------------------------------------------------
+    # Sensor 1: IMU (/imu/data)
+    # Source: MPU-6050 on roboRIO → serial bridge → this topic
+    # Provides: yaw rate (angular_velocity.z), linear acceleration x/y
+    #
+    # We do NOT fuse IMU orientation because the MPU-6050 doesn't have a
+    # magnetometer, so its absolute yaw is unreliable.  We only use:
+    #   - angular_velocity.z (yaw rate) – very reliable
+    #   - linear_acceleration.x, .y – provides short-term velocity correction
+    # -----------------------------------------------------------------------
+    imu0: "/imu/data"
+    imu0_config: [false, false, false,   # x, y, z
+                  false, false, false,   # roll, pitch, yaw
+                  false, false, false,   # vx, vy, vz
+                  false, false, true,    # vroll, vpitch, vyaw  ← gyro Z
+                  true,  true,  false]   # ax, ay, az  ← accelerometer X, Y
+
+    imu0_queue_size: 10
+    imu0_differential: false
+    imu0_relative: false
+    imu0_rejection_threshold: 3.0
+
+    # Remove gravitational acceleration from accelerometer readings.
+    # The MPU-6050 measures gravity; the filter should see only robot accel.
+    imu0_remove_gravitational_acceleration: true
+
+    # -----------------------------------------------------------------------
+    # Sensor 2: AprilTag Pose Corrections (/apriltag/pose_correction)
+    # Source: Jetson AprilTag detector → apriltag_to_odom_node → this topic
+    # Provides: absolute x, y, yaw in the map frame
+    #
+    # This is a geometry_msgs/PoseWithCovarianceStamped published whenever
+    # a wall AprilTag (ID 5, 6, or 7) is detected.
+    #
+    # NOTE: Since world_frame is "odom" for this instance, AprilTag fixes
+    # are treated as pose corrections in the odom frame.  For full map→odom
+    # correction, consider running a second EKF instance in map frame or
+    # using the pose data to periodically reset the odom frame origin.
+    #
+    # A pragmatic approach for this small field: fuse AprilTag pose as a
+    # pose input in the odom frame.  The field is <2.5m so drift between
+    # AprilTag fixes is minimal.
+    # -----------------------------------------------------------------------
+    pose0: "/apriltag/pose_correction"
+    pose0_config: [true,  true,  false,   # x, y, z
+                   false, false, true,    # roll, pitch, yaw
+                   false, false, false,   # vx, vy, vz
+                   false, false, false,   # vroll, vpitch, vyaw
+                   false, false, false]   # ax, ay, az
+
+    pose0_queue_size: 5
+    pose0_differential: false
+    pose0_relative: false
+
+    # Higher rejection threshold for AprilTag – these are authoritative fixes
+    # but can occasionally have outliers (partial tag detection)
+    pose0_rejection_threshold: 5.0
+
+    # -----------------------------------------------------------------------
+    # Process noise covariance (Q matrix)
+    # This represents how much we expect the state to change between filter
+    # updates due to unmodeled dynamics.
+    #
+    # Tuned for a small field (~2.4m × 1.2m) and slow robot (~0.5 m/s max).
+    # Smaller values = trust the model more, respond slower to measurements.
+    # Larger values = trust measurements more, respond faster.
+    #
+    # Order: [x, y, z, roll, pitch, yaw,
+    #         vx, vy, vz, vroll, vpitch, vyaw,
+    #         ax, ay, az]
+    #
+    # CALIBRATE: Start with these values.  If the filter is sluggish
+    # responding to AprilTag corrections, increase the position process noise.
+    # If the filter oscillates, decrease it.
+    # -----------------------------------------------------------------------
+    process_noise_covariance:
+      [0.005, 0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+       0.0,   0.005, 0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+       0.0,   0.0,   0.001, 0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+       0.0,   0.0,   0.0,   0.001, 0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+       0.0,   0.0,   0.0,   0.0,   0.001, 0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+       0.0,   0.0,   0.0,   0.0,   0.0,   0.003, 0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+       0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.01,  0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+       0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.01,  0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+       0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.001, 0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+       0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.001, 0.0,   0.0,   0.0,   0.0,   0.0,
+       0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.001, 0.0,   0.0,   0.0,   0.0,
+       0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.005, 0.0,   0.0,   0.0,
+       0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.01,  0.0,   0.0,
+       0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.01,  0.0,
+       0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.001]
+
+    # -----------------------------------------------------------------------
+    # Initial estimate covariance (P₀ matrix)
+    # At match start the robot is in the Landing Site with known position.
+    # Set very low initial covariance = high confidence in starting pose.
+    #
+    # CALIBRATE: If the robot's exact starting position within the Landing
+    # Site varies between matches, increase x and y initial covariance to
+    # ~0.01 (±10cm uncertainty).
+    # -----------------------------------------------------------------------
+    initial_estimate_covariance:
+      [0.001, 0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+       0.0,   0.001, 0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+       0.0,   0.0,   0.001, 0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+       0.0,   0.0,   0.0,   0.001, 0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+       0.0,   0.0,   0.0,   0.0,   0.001, 0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+       0.0,   0.0,   0.0,   0.0,   0.0,   0.001, 0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+       0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.01,  0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+       0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.01,  0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+       0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.01,  0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+       0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.01,  0.0,   0.0,   0.0,   0.0,   0.0,
+       0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.01,  0.0,   0.0,   0.0,   0.0,
+       0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.01,  0.0,   0.0,   0.0,
+       0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.1,   0.0,   0.0,
+       0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.1,   0.0,
+       0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.1]

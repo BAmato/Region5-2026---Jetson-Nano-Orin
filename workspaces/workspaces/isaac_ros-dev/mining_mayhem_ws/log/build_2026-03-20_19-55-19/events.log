@@ -1,0 +1,131 @@
+[0.000000] (-) TimerEvent: {}
+[0.000805] (mining_mayhem) JobQueued: {'identifier': 'mining_mayhem', 'dependencies': OrderedDict()}
+[0.001623] (mining_mayhem) JobStarted: {'identifier': 'mining_mayhem'}
+[0.099931] (-) TimerEvent: {}
+[0.200481] (-) TimerEvent: {}
+[0.301041] (-) TimerEvent: {}
+[0.401601] (-) TimerEvent: {}
+[0.502154] (-) TimerEvent: {}
+[0.602707] (-) TimerEvent: {}
+[0.703267] (-) TimerEvent: {}
+[0.803850] (-) TimerEvent: {}
+[0.904506] (-) TimerEvent: {}
+[1.005214] (-) TimerEvent: {}
+[1.105762] (-) TimerEvent: {}
+[1.206326] (-) TimerEvent: {}
+[1.306925] (-) TimerEvent: {}
+[1.407661] (-) TimerEvent: {}
+[1.508400] (-) TimerEvent: {}
+[1.609133] (-) TimerEvent: {}
+[1.709890] (-) TimerEvent: {}
+[1.810624] (-) TimerEvent: {}
+[1.911359] (-) TimerEvent: {}
+[2.012030] (-) TimerEvent: {}
+[2.112684] (-) TimerEvent: {}
+[2.213329] (-) TimerEvent: {}
+[2.314063] (-) TimerEvent: {}
+[2.362616] (mining_mayhem) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--uninstall', '--editable', '--build-directory', '/workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/build'], 'cwd': '/workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'LIBRARY_PATH': '/usr/local/cuda/lib64/stubs', 'PYTHONWARNINGS': 'ignore:::setuptools.command.install,ignore:::setuptools.command.easy_install,ignore:::pkg_resources,ignore:::setuptools.command.develop', 'NV_LIBCUBLAS_VERSION': '12.2.5.6-1', 'USER': 'mrohms', 'HOSTNAME': 'mrohms-desktop', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/lib/aarch64-linux-gnu/tegra/weston:/usr/lib/aarch64-linux-gnu/tegra-egl:/usr/local/cuda-12.2/targets/aarch64-linux/lib:/usr/lib/aarch64-linux-gnu/tegra:/opt/nvidia/vpi3/lib64:/usr/local/nvidia/lib:/usr/local/nvidia/lib64:/usr/lib/aarch64-linux-gnu-host:/opt/tritonserver/lib', 'HOME': '/home/admin', 'OLDPWD': '/workspaces/isaac_ros-dev/mining_mayhem_ws', 'NV_LIBCUBLAS_DEV_VERSION': '12.2.5.6-1', 'ROS_PYTHON_VERSION': '3', 'USER_UID': '1000', 'NV_LIBNPP_PACKAGE': 'libnpp-12-2=12.2.1.4-1', 'CUDA_VERSION': '12.2.12', 'COLCON_PREFIX_PATH': '/workspaces/isaac_ros-dev/mining_mayhem_ws/install', 'ROS_DISTRO': 'humble', 'NV_LIBCUBLAS_PACKAGE_NAME': 'libcublas-12-2', 'NVIDIA_REQUIRE_CUDA': 'cuda>=12.2', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'NV_LIBCUSPARSE_VERSION': '12.1.2.141-1', 'NVIDIA_DRIVER_CAPABILITIES': 'all', 'NV_CUDA_LIB_VERSION': '12.2.12-1', 'NV_NVML_DEV_VERSION': '12.2.140-1', 'USERNAME': 'admin', 'NV_LIBNPP_DEV_PACKAGE': 'libnpp-dev-12-2=12.2.1.4-1', 'TERM': 'xterm', 'ISAAC_ROS_WS': '/workspaces/isaac_ros-dev', 'NV_CUDA_CUDART_VERSION': '12.2.140-1', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/src/tensorrt/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/nvidia/tao', 'FASTRTPS_DEFAULT_PROFILES_FILE': '/usr/local/share/middleware_profiles/rtps_udp_profile.xml', 'NV_LIBCUBLAS_DEV_PACKAGE_NAME': 'libcublas-dev-12-2', 'NV_LIBCUBLAS_PACKAGE': 'libcublas-12-2=12.2.5.6-1', 'NVARCH': 'arm64', 'NV_LIBCUSPARSE_DEV_VERSION': '12.1.2.141-1', 'DISPLAY': ':0', 'NVIDIA_PRODUCT_NAME': 'CUDA', 'LANG': 'en_US.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_fastrtps_cpp', 'NV_CUDA_CUDART_DEV_VERSION': '12.2.140-1', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'ROS_ROOT': '/opt/ros/humble', 'AMENT_PREFIX_PATH': '/workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem:/opt/ros/humble', 'DEBIAN_FRONTEND': 'noninteractive', 'SHELL': '/bin/bash', 'TRT_INCLUDE_PATH': '/usr/include/aarch64-linux-gnu', 'NV_LIBCUBLAS_DEV_PACKAGE': 'libcublas-dev-12-2=12.2.5.6-1', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'NVIDIA_REQUIRE_JETPACK_HOST_MOUNTS': 'base-only', 'NV_NVTX_VERSION': '12.2.140-1', 'NV_LIBNPP_VERSION': '12.2.1.4-1', 'PWD': '/workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem', 'PYTHONPATH': '/workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages:/workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem:/workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'NVIDIA_VISIBLE_DEVICES': 'all', 'USER_GID': '1000', 'COLCON': '1', 'NV_LIBNPP_DEV_VERSION': '12.2.1.4-1', 'TRT_LIB_PATH': '/usr/lib/aarch64-linux-gnu'}, 'shell': False}
+[2.414181] (-) TimerEvent: {}
+[2.514727] (-) TimerEvent: {}
+[2.615301] (-) TimerEvent: {}
+[2.715841] (-) TimerEvent: {}
+[2.816374] (-) TimerEvent: {}
+[2.916910] (-) TimerEvent: {}
+[3.017460] (-) TimerEvent: {}
+[3.118002] (-) TimerEvent: {}
+[3.188232] (mining_mayhem) StdoutLine: {'line': b'running develop\n'}
+[3.218100] (-) TimerEvent: {}
+[3.318575] (-) TimerEvent: {}
+[3.419087] (-) TimerEvent: {}
+[3.519581] (-) TimerEvent: {}
+[3.620073] (-) TimerEvent: {}
+[3.716384] (mining_mayhem) StdoutLine: {'line': b'Removing /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages/mining-mayhem.egg-link (link to .)\n'}
+[3.720156] (-) TimerEvent: {}
+[3.820634] (-) TimerEvent: {}
+[3.850928] (mining_mayhem) CommandEnded: {'returncode': 0}
+[3.854588] (mining_mayhem) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/mining_mayhem', 'build', '--build-base', '/workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/build', 'install', '--record', '/workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/install.log', '--single-version-externally-managed', 'install_data', '--force'], 'cwd': '/workspaces/isaac_ros-dev/mining_mayhem_ws/src/mining_mayhem', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'LIBRARY_PATH': '/usr/local/cuda/lib64/stubs', 'PYTHONWARNINGS': 'ignore:::setuptools.command.install,ignore:::setuptools.command.easy_install,ignore:::pkg_resources,ignore:::setuptools.command.develop', 'NV_LIBCUBLAS_VERSION': '12.2.5.6-1', 'USER': 'mrohms', 'HOSTNAME': 'mrohms-desktop', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/lib/aarch64-linux-gnu/tegra/weston:/usr/lib/aarch64-linux-gnu/tegra-egl:/usr/local/cuda-12.2/targets/aarch64-linux/lib:/usr/lib/aarch64-linux-gnu/tegra:/opt/nvidia/vpi3/lib64:/usr/local/nvidia/lib:/usr/local/nvidia/lib64:/usr/lib/aarch64-linux-gnu-host:/opt/tritonserver/lib', 'HOME': '/home/admin', 'OLDPWD': '/workspaces/isaac_ros-dev/mining_mayhem_ws', 'NV_LIBCUBLAS_DEV_VERSION': '12.2.5.6-1', 'ROS_PYTHON_VERSION': '3', 'USER_UID': '1000', 'NV_LIBNPP_PACKAGE': 'libnpp-12-2=12.2.1.4-1', 'CUDA_VERSION': '12.2.12', 'COLCON_PREFIX_PATH': '/workspaces/isaac_ros-dev/mining_mayhem_ws/install', 'ROS_DISTRO': 'humble', 'NV_LIBCUBLAS_PACKAGE_NAME': 'libcublas-12-2', 'NVIDIA_REQUIRE_CUDA': 'cuda>=12.2', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'NV_LIBCUSPARSE_VERSION': '12.1.2.141-1', 'NVIDIA_DRIVER_CAPABILITIES': 'all', 'NV_CUDA_LIB_VERSION': '12.2.12-1', 'NV_NVML_DEV_VERSION': '12.2.140-1', 'USERNAME': 'admin', 'NV_LIBNPP_DEV_PACKAGE': 'libnpp-dev-12-2=12.2.1.4-1', 'TERM': 'xterm', 'ISAAC_ROS_WS': '/workspaces/isaac_ros-dev', 'NV_CUDA_CUDART_VERSION': '12.2.140-1', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/src/tensorrt/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/nvidia/tao', 'FASTRTPS_DEFAULT_PROFILES_FILE': '/usr/local/share/middleware_profiles/rtps_udp_profile.xml', 'NV_LIBCUBLAS_DEV_PACKAGE_NAME': 'libcublas-dev-12-2', 'NV_LIBCUBLAS_PACKAGE': 'libcublas-12-2=12.2.5.6-1', 'NVARCH': 'arm64', 'NV_LIBCUSPARSE_DEV_VERSION': '12.1.2.141-1', 'DISPLAY': ':0', 'NVIDIA_PRODUCT_NAME': 'CUDA', 'LANG': 'en_US.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_fastrtps_cpp', 'NV_CUDA_CUDART_DEV_VERSION': '12.2.140-1', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'ROS_ROOT': '/opt/ros/humble', 'AMENT_PREFIX_PATH': '/workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem:/opt/ros/humble', 'DEBIAN_FRONTEND': 'noninteractive', 'SHELL': '/bin/bash', 'TRT_INCLUDE_PATH': '/usr/include/aarch64-linux-gnu', 'NV_LIBCUBLAS_DEV_PACKAGE': 'libcublas-dev-12-2=12.2.5.6-1', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'NVIDIA_REQUIRE_JETPACK_HOST_MOUNTS': 'base-only', 'NV_NVTX_VERSION': '12.2.140-1', 'NV_LIBNPP_VERSION': '12.2.1.4-1', 'PWD': '/workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem', 'PYTHONPATH': '/workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages:/workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem:/workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'NVIDIA_VISIBLE_DEVICES': 'all', 'USER_GID': '1000', 'COLCON': '1', 'NV_LIBNPP_DEV_VERSION': '12.2.1.4-1', 'TRT_LIB_PATH': '/usr/lib/aarch64-linux-gnu'}, 'shell': False}
+[3.920766] (-) TimerEvent: {}
+[4.021332] (-) TimerEvent: {}
+[4.121887] (-) TimerEvent: {}
+[4.222410] (-) TimerEvent: {}
+[4.322953] (-) TimerEvent: {}
+[4.423566] (-) TimerEvent: {}
+[4.524102] (-) TimerEvent: {}
+[4.624660] (-) TimerEvent: {}
+[4.725196] (-) TimerEvent: {}
+[4.749963] (mining_mayhem) StdoutLine: {'line': b'running egg_info\n'}
+[4.784707] (mining_mayhem) StdoutLine: {'line': b'writing ../../build/mining_mayhem/mining_mayhem.egg-info/PKG-INFO\n'}
+[4.785389] (mining_mayhem) StdoutLine: {'line': b'writing dependency_links to ../../build/mining_mayhem/mining_mayhem.egg-info/dependency_links.txt\n'}
+[4.785701] (mining_mayhem) StdoutLine: {'line': b'writing entry points to ../../build/mining_mayhem/mining_mayhem.egg-info/entry_points.txt\n'}
+[4.786100] (mining_mayhem) StdoutLine: {'line': b'writing requirements to ../../build/mining_mayhem/mining_mayhem.egg-info/requires.txt\n'}
+[4.786344] (mining_mayhem) StdoutLine: {'line': b'writing top-level names to ../../build/mining_mayhem/mining_mayhem.egg-info/top_level.txt\n'}
+[4.825284] (-) TimerEvent: {}
+[4.925729] (-) TimerEvent: {}
+[4.927012] (mining_mayhem) StderrLine: {'line': b"listing git files failed - pretending there aren't any\n"}
+[5.025883] (-) TimerEvent: {}
+[5.126503] (-) TimerEvent: {}
+[5.163025] (mining_mayhem) StdoutLine: {'line': b"reading manifest file '../../build/mining_mayhem/mining_mayhem.egg-info/SOURCES.txt'\n"}
+[5.167979] (mining_mayhem) StdoutLine: {'line': b"writing manifest file '../../build/mining_mayhem/mining_mayhem.egg-info/SOURCES.txt'\n"}
+[5.168440] (mining_mayhem) StdoutLine: {'line': b'running build\n'}
+[5.168691] (mining_mayhem) StdoutLine: {'line': b'running build_py\n'}
+[5.169285] (mining_mayhem) StdoutLine: {'line': b'creating /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/build\n'}
+[5.169541] (mining_mayhem) StdoutLine: {'line': b'creating /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/build/lib\n'}
+[5.169766] (mining_mayhem) StdoutLine: {'line': b'creating /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/build/lib/mining_mayhem\n'}
+[5.170012] (mining_mayhem) StdoutLine: {'line': b'copying mining_mayhem/match_watchdog_node.py -> /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/build/lib/mining_mayhem\n'}
+[5.170480] (mining_mayhem) StdoutLine: {'line': b'copying mining_mayhem/start_led_detector_node.py -> /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/build/lib/mining_mayhem\n'}
+[5.170911] (mining_mayhem) StdoutLine: {'line': b'copying mining_mayhem/mission_state_node.py -> /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/build/lib/mining_mayhem\n'}
+[5.171441] (mining_mayhem) StdoutLine: {'line': b'copying mining_mayhem/serial_bridge_node.py -> /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/build/lib/mining_mayhem\n'}
+[5.171896] (mining_mayhem) StdoutLine: {'line': b'copying mining_mayhem/material_detector_node.py -> /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/build/lib/mining_mayhem\n'}
+[5.172329] (mining_mayhem) StdoutLine: {'line': b'copying mining_mayhem/apriltag_to_odom_node.py -> /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/build/lib/mining_mayhem\n'}
+[5.172764] (mining_mayhem) StdoutLine: {'line': b'copying mining_mayhem/telemetry_decoder_node.py -> /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/build/lib/mining_mayhem\n'}
+[5.173163] (mining_mayhem) StdoutLine: {'line': b'copying mining_mayhem/__init__.py -> /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/build/lib/mining_mayhem\n'}
+[5.173521] (mining_mayhem) StdoutLine: {'line': b'copying mining_mayhem/path_planner_node.py -> /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/build/lib/mining_mayhem\n'}
+[5.174401] (mining_mayhem) StdoutLine: {'line': b'running install\n'}
+[5.187333] (mining_mayhem) StdoutLine: {'line': b'running install_lib\n'}
+[5.226600] (-) TimerEvent: {}
+[5.239575] (mining_mayhem) StdoutLine: {'line': b'creating /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages/mining_mayhem\n'}
+[5.239946] (mining_mayhem) StdoutLine: {'line': b'copying /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/build/lib/mining_mayhem/match_watchdog_node.py -> /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages/mining_mayhem\n'}
+[5.240661] (mining_mayhem) StdoutLine: {'line': b'copying /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/build/lib/mining_mayhem/start_led_detector_node.py -> /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages/mining_mayhem\n'}
+[5.240850] (mining_mayhem) StdoutLine: {'line': b'copying /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/build/lib/mining_mayhem/mission_state_node.py -> /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages/mining_mayhem\n'}
+[5.241045] (mining_mayhem) StdoutLine: {'line': b'copying /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/build/lib/mining_mayhem/serial_bridge_node.py -> /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages/mining_mayhem\n'}
+[5.241368] (mining_mayhem) StdoutLine: {'line': b'copying /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/build/lib/mining_mayhem/material_detector_node.py -> /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages/mining_mayhem\n'}
+[5.241656] (mining_mayhem) StdoutLine: {'line': b'copying /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/build/lib/mining_mayhem/apriltag_to_odom_node.py -> /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages/mining_mayhem\n'}
+[5.241972] (mining_mayhem) StdoutLine: {'line': b'copying /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/build/lib/mining_mayhem/telemetry_decoder_node.py -> /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages/mining_mayhem\n'}
+[5.242288] (mining_mayhem) StdoutLine: {'line': b'copying /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/build/lib/mining_mayhem/__init__.py -> /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages/mining_mayhem\n'}
+[5.242558] (mining_mayhem) StdoutLine: {'line': b'copying /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/build/lib/mining_mayhem/path_planner_node.py -> /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages/mining_mayhem\n'}
+[5.243963] (mining_mayhem) StdoutLine: {'line': b'byte-compiling /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages/mining_mayhem/match_watchdog_node.py to match_watchdog_node.cpython-310.pyc\n'}
+[5.246321] (mining_mayhem) StdoutLine: {'line': b'byte-compiling /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages/mining_mayhem/start_led_detector_node.py to start_led_detector_node.cpython-310.pyc\n'}
+[5.248999] (mining_mayhem) StdoutLine: {'line': b'byte-compiling /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages/mining_mayhem/mission_state_node.py to mission_state_node.cpython-310.pyc\n'}
+[5.255593] (mining_mayhem) StdoutLine: {'line': b'byte-compiling /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages/mining_mayhem/serial_bridge_node.py to serial_bridge_node.cpython-310.pyc\n'}
+[5.259305] (mining_mayhem) StdoutLine: {'line': b'byte-compiling /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages/mining_mayhem/material_detector_node.py to material_detector_node.cpython-310.pyc\n'}
+[5.260048] (mining_mayhem) StdoutLine: {'line': b'byte-compiling /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages/mining_mayhem/apriltag_to_odom_node.py to apriltag_to_odom_node.cpython-310.pyc\n'}
+[5.263065] (mining_mayhem) StdoutLine: {'line': b'byte-compiling /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages/mining_mayhem/telemetry_decoder_node.py to telemetry_decoder_node.cpython-310.pyc\n'}
+[5.264694] (mining_mayhem) StdoutLine: {'line': b'byte-compiling /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages/mining_mayhem/__init__.py to __init__.cpython-310.pyc\n'}
+[5.265085] (mining_mayhem) StdoutLine: {'line': b'byte-compiling /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages/mining_mayhem/path_planner_node.py to path_planner_node.cpython-310.pyc\n'}
+[5.265758] (mining_mayhem) StdoutLine: {'line': b'running install_data\n'}
+[5.266071] (mining_mayhem) StdoutLine: {'line': b'copying resource/mining_mayhem -> /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/share/ament_index/resource_index/packages\n'}
+[5.266493] (mining_mayhem) StdoutLine: {'line': b'copying package.xml -> /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/share/mining_mayhem\n'}
+[5.266847] (mining_mayhem) StdoutLine: {'line': b'copying launch/jetson_bringup.launch.py -> /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/share/mining_mayhem/launch\n'}
+[5.267219] (mining_mayhem) StdoutLine: {'line': b'copying launch/vision_stack_smoke_test.launch.py -> /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/share/mining_mayhem/launch\n'}
+[5.267547] (mining_mayhem) StdoutLine: {'line': b'copying config/apriltag_config.yaml -> /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/share/mining_mayhem/config\n'}
+[5.267836] (mining_mayhem) StdoutLine: {'line': b'copying config/front_camera_calib.yaml -> /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/share/mining_mayhem/config\n'}
+[5.268108] (mining_mayhem) StdoutLine: {'line': b'copying config/led_camera_calib.yaml -> /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/share/mining_mayhem/config\n'}
+[5.268377] (mining_mayhem) StdoutLine: {'line': b'copying config/ekf.yaml -> /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/share/mining_mayhem/config\n'}
+[5.268654] (mining_mayhem) StdoutLine: {'line': b'running install_egg_info\n'}
+[5.303622] (mining_mayhem) StdoutLine: {'line': b'Copying ../../build/mining_mayhem/mining_mayhem.egg-info to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages/mining_mayhem-0.1.0-py3.10.egg-info\n'}
+[5.307542] (mining_mayhem) StdoutLine: {'line': b'running install_scripts\n'}
+[5.326690] (-) TimerEvent: {}
+[5.427135] (-) TimerEvent: {}
+[5.443751] (mining_mayhem) StdoutLine: {'line': b'Installing apriltag_to_odom_node script to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/mining_mayhem\n'}
+[5.444208] (mining_mayhem) StdoutLine: {'line': b'Installing match_watchdog_node script to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/mining_mayhem\n'}
+[5.444533] (mining_mayhem) StdoutLine: {'line': b'Installing material_detector_node script to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/mining_mayhem\n'}
+[5.444812] (mining_mayhem) StdoutLine: {'line': b'Installing mission_state_node script to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/mining_mayhem\n'}
+[5.445136] (mining_mayhem) StdoutLine: {'line': b'Installing path_planner_node script to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/mining_mayhem\n'}
+[5.445419] (mining_mayhem) StdoutLine: {'line': b'Installing serial_bridge_node script to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/mining_mayhem\n'}
+[5.445687] (mining_mayhem) StdoutLine: {'line': b'Installing start_led_detector_node script to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/mining_mayhem\n'}
+[5.445945] (mining_mayhem) StdoutLine: {'line': b'Installing telemetry_decoder_node script to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/mining_mayhem\n'}
+[5.447070] (mining_mayhem) StdoutLine: {'line': b"writing list of installed files to '/workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/install.log'\n"}
+[5.527309] (-) TimerEvent: {}
+[5.565156] (mining_mayhem) CommandEnded: {'returncode': 0}
+[5.602197] (mining_mayhem) JobEnded: {'identifier': 'mining_mayhem', 'rc': 0}
+[5.604921] (-) EventReactorShutdown: {}

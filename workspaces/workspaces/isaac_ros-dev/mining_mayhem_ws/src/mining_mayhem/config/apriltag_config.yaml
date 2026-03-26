@@ -1,0 +1,46 @@
+# ===========================================================================
+# apriltag_config.yaml
+# Shared behavior/config for the immediate AprilTag + telemetry + start-light stack.
+# ===========================================================================
+apriltag_to_odom_node:
+  ros__parameters:
+    wall_tag_ids: [5, 6, 7]
+    wall_tag_frames: ["tag_5", "tag_6", "tag_7"]
+    bench_extra_ids: [-1]
+    camera_frame: "camera_link"
+    base_frame: "base_link"
+    map_frame: "map"
+    output_frame: "odom"
+    min_tag_half_px: 10.0
+    pos_cov_base: 0.005
+    pos_cov_slope: 0.010
+    yaw_cov_base: 0.003
+    yaw_cov_slope: 0.005
+
+telemetry_decoder_node:
+  ros__parameters:
+    telemetry_tag_ids: [0, 1, 2, 3, 4]
+    confirmation_frames: 3
+    latch_result: true
+    latch_publish_rate_hz: 2.0
+    min_tag_half_px: 8.0
+
+start_led_detector_node:
+  ros__parameters:
+    image_topic: "/led_cam/image_raw"
+    roi_x: 280
+    roi_y: 200
+    roi_w: 80
+    roi_h: 80
+    brightness_threshold: 150
+    min_consecutive_frames: 3
+    latch_signal: true
+    latch_publish_rate_hz: 10.0
+
+match_watchdog_node:
+  ros__parameters:
+    match_duration_sec: 180.0
+    safety_margin_sec: 1.0
+    start_signal_topic: "/match/start_signal"
+    emergency_stop_topic: "/match/emergency_stop"
+    cmd_vel_topic: "/cmd_vel"

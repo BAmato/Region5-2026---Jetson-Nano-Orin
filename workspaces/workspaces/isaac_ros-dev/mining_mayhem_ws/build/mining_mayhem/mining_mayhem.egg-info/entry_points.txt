@@ -1,0 +1,9 @@
+[console_scripts]
+apriltag_to_odom_node = mining_mayhem.apriltag_to_odom_node:main
+match_watchdog_node = mining_mayhem.match_watchdog_node:main
+material_detector_node = mining_mayhem.material_detector_node:main
+mission_state_node = mining_mayhem.mission_state_node:main
+path_planner_node = mining_mayhem.path_planner_node:main
+serial_bridge_node = mining_mayhem.serial_bridge_node:main
+start_led_detector_node = mining_mayhem.start_led_detector_node:main
+telemetry_decoder_node = mining_mayhem.telemetry_decoder_node:main

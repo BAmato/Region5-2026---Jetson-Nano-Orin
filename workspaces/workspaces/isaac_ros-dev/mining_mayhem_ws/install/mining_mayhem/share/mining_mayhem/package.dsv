@@ -1,0 +1,9 @@
+source;share/mining_mayhem/hook/pythonpath.ps1
+source;share/mining_mayhem/hook/pythonpath.dsv
+source;share/mining_mayhem/hook/pythonpath.sh
+source;share/mining_mayhem/hook/ament_prefix_path.ps1
+source;share/mining_mayhem/hook/ament_prefix_path.dsv
+source;share/mining_mayhem/hook/ament_prefix_path.sh
+source;../../build/mining_mayhem/share/mining_mayhem/hook/pythonpath_develop.ps1
+source;../../build/mining_mayhem/share/mining_mayhem/hook/pythonpath_develop.dsv
+source;../../build/mining_mayhem/share/mining_mayhem/hook/pythonpath_develop.sh

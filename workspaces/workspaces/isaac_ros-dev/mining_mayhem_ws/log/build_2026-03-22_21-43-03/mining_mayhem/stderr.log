@@ -1,0 +1,2 @@
+listing git files failed - pretending there aren't any
+error: can't copy '/workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/launch/rviz_bringup.launch.py': doesn't exist or not a regular file

@@ -1,0 +1,24 @@
+running develop
+running egg_info
+writing mining_mayhem.egg-info/PKG-INFO
+writing dependency_links to mining_mayhem.egg-info/dependency_links.txt
+writing entry points to mining_mayhem.egg-info/entry_points.txt
+writing requirements to mining_mayhem.egg-info/requires.txt
+writing top-level names to mining_mayhem.egg-info/top_level.txt
+listing git files failed - pretending there aren't any
+reading manifest file 'mining_mayhem.egg-info/SOURCES.txt'
+writing manifest file 'mining_mayhem.egg-info/SOURCES.txt'
+running build_ext
+Creating /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages/mining-mayhem.egg-link (link to .)
+Installing apriltag_to_odom_node script to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/mining_mayhem
+Installing match_watchdog_node script to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/mining_mayhem
+Installing material_detector_node script to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/mining_mayhem
+Installing mission_state_node script to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/mining_mayhem
+Installing path_planner_node script to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/mining_mayhem
+Installing serial_bridge_node script to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/mining_mayhem
+Installing start_led_detector_node script to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/mining_mayhem
+Installing telemetry_decoder_node script to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/mining_mayhem
+
+Installed /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem
+running symlink_data
+symbolically linking /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/launch/rviz_bringup.launch.py -> /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/share/mining_mayhem/launch

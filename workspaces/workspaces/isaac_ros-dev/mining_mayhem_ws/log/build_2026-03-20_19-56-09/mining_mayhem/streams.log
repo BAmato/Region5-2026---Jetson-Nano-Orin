@@ -1,0 +1,33 @@
+[2.438s] Invoking command in '/workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem': PYTHONPATH=/workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/build --no-deps symlink_data --force
+[3.318s] running develop
+[3.843s] running egg_info
+[3.876s] writing mining_mayhem.egg-info/PKG-INFO
+[3.876s] writing dependency_links to mining_mayhem.egg-info/dependency_links.txt
+[3.877s] writing entry points to mining_mayhem.egg-info/entry_points.txt
+[3.877s] writing requirements to mining_mayhem.egg-info/requires.txt
+[3.878s] writing top-level names to mining_mayhem.egg-info/top_level.txt
+[4.018s] listing git files failed - pretending there aren't any
+[4.259s] reading manifest file 'mining_mayhem.egg-info/SOURCES.txt'
+[4.261s] writing manifest file 'mining_mayhem.egg-info/SOURCES.txt'
+[4.385s] running build_ext
+[4.385s] Creating /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages/mining-mayhem.egg-link (link to .)
+[4.387s] Installing apriltag_to_odom_node script to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/mining_mayhem
+[4.387s] Installing match_watchdog_node script to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/mining_mayhem
+[4.387s] Installing material_detector_node script to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/mining_mayhem
+[4.388s] Installing mission_state_node script to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/mining_mayhem
+[4.388s] Installing path_planner_node script to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/mining_mayhem
+[4.388s] Installing serial_bridge_node script to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/mining_mayhem
+[4.389s] Installing start_led_detector_node script to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/mining_mayhem
+[4.389s] Installing telemetry_decoder_node script to /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/mining_mayhem
+[4.390s] 
+[4.390s] Installed /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem
+[4.390s] running symlink_data
+[4.390s] symbolically linking /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/resource/mining_mayhem -> /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/share/ament_index/resource_index/packages
+[4.391s] symbolically linking /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/package.xml -> /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/share/mining_mayhem
+[4.391s] symbolically linking /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/launch/jetson_bringup.launch.py -> /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/share/mining_mayhem/launch
+[4.391s] symbolically linking /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/launch/vision_stack_smoke_test.launch.py -> /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/share/mining_mayhem/launch
+[4.392s] symbolically linking /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/config/apriltag_config.yaml -> /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/share/mining_mayhem/config
+[4.392s] symbolically linking /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/config/front_camera_calib.yaml -> /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/share/mining_mayhem/config
+[4.392s] symbolically linking /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/config/led_camera_calib.yaml -> /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/share/mining_mayhem/config
+[4.392s] symbolically linking /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/config/ekf.yaml -> /workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/share/mining_mayhem/config
+[4.575s] Invoked command in '/workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem' returned '0': PYTHONPATH=/workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspaces/isaac_ros-dev/mining_mayhem_ws/install/mining_mayhem/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/build --no-deps symlink_data --force

@@ -1,0 +1,11 @@
+[0.000000] (-) TimerEvent: {}
+[0.000583] (-) JobUnselected: {'identifier': 'isaac_ros_apriltag_interfaces'}
+[0.000879] (-) JobUnselected: {'identifier': 'isaac_ros_bi3d_interfaces'}
+[0.000936] (-) JobUnselected: {'identifier': 'isaac_ros_common'}
+[0.001053] (-) JobUnselected: {'identifier': 'isaac_ros_launch_utils'}
+[0.001113] (-) JobUnselected: {'identifier': 'isaac_ros_nitros_bridge_interfaces'}
+[0.001167] (-) JobUnselected: {'identifier': 'isaac_ros_nova_interfaces'}
+[0.001223] (-) JobUnselected: {'identifier': 'isaac_ros_pointcloud_interfaces'}
+[0.001340] (-) JobUnselected: {'identifier': 'isaac_ros_tensor_list_interfaces'}
+[0.001450] (-) JobUnselected: {'identifier': 'isaac_ros_test'}
+[0.001580] (-) EventReactorShutdown: {}

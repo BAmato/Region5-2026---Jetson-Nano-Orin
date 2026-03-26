@@ -1,0 +1,1 @@
+/workspaces/isaac_ros-dev/mining_mayhem_ws/build/mining_mayhem/launch/vision_stack_smoke_test.launch.py
