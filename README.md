@@ -1,0 +1,1 @@
+Important: this repo is not a full byte-for-byte clone of the Jetson workspace. Large unmodified Isaac ROS / NVIDIA files were left out on purpose because they are upstream dependencies, not custom code. They are expected to exist in the runtime environment via standard installation and should be treated as external dependencies rather than missing project files.
